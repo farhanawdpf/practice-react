@@ -9,23 +9,30 @@ import {BrowserRouter,Routes,Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Contact from './pages/Contact';
 import Blog from './pages/Blog';
+import Anotherlink from './pages/Anotherlink';
+import SecondPage from './pages/SecondPage';
 
 
 const App = () => {
   return (
- <Fragment>
+ <>
      <BrowserRouter>
      <Header/>
      <Navbar/>
       <Routes>
-        <Route path="/" element={<Home/>} />
-        <Route path="/contact" element={<Contact/>} />
-        <Route path="/blog" element={<Blog/>} />
+        <Route path="/" element={<Home />} >
+              <Route path="/anotherlink" element={<Anotherlink/>} />
+        </Route> 
+        <Route path="/contact" element={<Contact/>}/>
+
+        <Route path="/blog" element={<Blog/>}>
+           <Route path="second" element={<SecondPage/>}/>
+        </Route>
       </Routes>
+     <Footer/>
     </BrowserRouter>
 
-     <Footer/>
-   </Fragment>
+   </>
   );
 };
 

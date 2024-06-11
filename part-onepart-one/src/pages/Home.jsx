@@ -1,9 +1,13 @@
 import React from 'react';
+import {Link, Outlet } from 'react-router-dom';
 
 const Home = () => {
     return (
         <div>
-            This IS Home Page.
+            <nav>
+            <Link to="/anotherlink" className="nav-link">My Profile</Link>
+            </nav>
+            <Outlet />
         </div>
     );
 };

@@ -1,5 +1,5 @@
 import React from 'react';
-
+import {Link, Outlet } from 'react-router-dom';
 const Blog = () => {
     return (
         <div>
@@ -32,6 +32,13 @@ const Blog = () => {
     </tr>
   </tbody>
 </table>
+  <div>
+    <nav> 
+      <Link to="second" className="nav-link">MSecond</Link>
+    </nav> 
+  <Outlet/>
+  
+  </div>
         </div>
     );
 };
