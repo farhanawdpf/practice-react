@@ -69,7 +69,7 @@ const Sidebar = () => {
             
                 <li className="nav-item">
                 <a href="#" className="nav-link">
-                    <i className="nav-icon fas fa-book" />
+                    <i className="nav-icon fas fa-user" />
                     <p>
                     Users
                     <i className="fas fa-angle-left right" />
