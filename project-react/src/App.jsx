@@ -1,17 +1,15 @@
 
-import { BrowserRouter, Routes,Route} from 'react-router-dom'
-import Contact from './pages/Contact'
-import Navbar from './components/Navbar'
-import Home from './pages/Home'
+import Footer from './components/Footer'
 function App() {
   return (
-    <BrowserRouter>
-      <Navbar/>
-      <Routes> 
-        <Route path="/" element={<Home/>} />
-        <Route path="/contact" element={<Contact/>} />
-      </Routes>
-    </BrowserRouter>
+    <>
+    <Footer name='Rakib'adress='Dhaka' email='rakib@gmail'id='1'></Footer>
+    <Footer name='Raju'adress='Mirpur' email='raju@gmail' id='2'></Footer>
+    <Footer name='Rafia'adress='JAtrabari' email='rafia@gmail' id='3'></Footer>
+    <Footer name='Farjana'adress='Mohammadpur' email='farjana@gmail' id='4'></Footer>
+ 
+   
+    </>
   )
 }
 
