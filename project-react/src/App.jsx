@@ -1,13 +1,37 @@
 
-import Footer from './components/Footer'
+import Footer from './components/Footer';
+import Header from './components/Header';
 function App() {
+  // const products = ['a','b','m','v'];
+  const items = [ 
+    {name: 'Nokia', price: 12000},
+    {name: 'Apple', price: 120000},
+    {name: 'Sumsang', price: 200440},
+    {name: 'Vivo', price: 123000}
+  ]
+  const fAlrt = () =>{ 
+    alert('done');
+  }
+
   return (
     <>
-    <Footer name='Rakib'adress='Dhaka' email='rakib@gmail'id='1'></Footer>
-    <Footer name='Raju'adress='Mirpur' email='raju@gmail' id='2'></Footer>
-    <Footer name='Rafia'adress='JAtrabari' email='rafia@gmail' id='3'></Footer>
-    <Footer name='Farjana'adress='Mohammadpur' email='farjana@gmail' id='4'></Footer>
- 
+
+{/* <Header 
+pro ={products}>
+
+</Header> */}
+
+    {/* { 
+    products.map(product =><Header 
+      aPro = {product}
+      alt = {fAlrt}
+    />)
+    
+    } */}
+  {
+  items.map(itm =><Header 
+  a = {itm}
+ />)}
    
     </>
   )
