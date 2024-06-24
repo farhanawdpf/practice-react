@@ -64,7 +64,7 @@ const Navbar = () => {
         <a href="#" className="dropdown-item">
           {/* Message Start */}
           <div className="media">
-            <img src="../../dist/img/user8-128x128.jpg" alt="User Avatar" className="img-size-50 img-circle mr-3" />
+            <img src="asstes/dist/img/user8-128x128.jpg" alt="User Avatar" className="img-size-50 img-circle mr-3" />
             <div className="media-body">
               <h3 className="dropdown-item-title">
                 John Pierce

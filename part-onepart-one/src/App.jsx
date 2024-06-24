@@ -12,6 +12,7 @@ import Sidebar from './components/Sidebar';
 import Adduser from './pages/users/Adduser';
 import Manageuser from './pages/users/Manageuser';
 import Edituser from './pages/users/Edituser';
+import AddCategory from './pages/category/AddCategory';
 
 
 const App = () => {
@@ -25,6 +26,7 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/contact" element={<Contact/>}/>
         <Route path="/add-user" element={<Adduser/>}/>
+        <Route path="/add-category" element={<AddCategory/>}/>
         <Route path="/manage-user" element={<Manageuser/>}/>
         <Route path="/edit-user" element={<Edituser/>}/>
         <Route path="/blog" element={<Blog/>}>

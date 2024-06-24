@@ -89,7 +89,31 @@ const Sidebar = () => {
                     </NavLink>
                     </li>
                 </ul>
-                </li>  
+                </li>
+                <li className="nav-item">
+                <a href="#" className="nav-link">
+                    <i className="nav-icon fas fa-user" />
+                    <p>
+                   Category
+                    <i className="fas fa-angle-left right" />
+                    </p>
+                </a>
+                <ul className="nav nav-treeview">
+                    <li className="nav-item">
+                    <NavLink to="/add-category" className="nav-link">
+                        <i className="far fa-circle nav-icon" />
+                        <p>Add-Category</p>
+                    </NavLink>
+                    </li>
+                    <li className="nav-item">
+                    <NavLink to="/manage-user" className="nav-link">
+                        <i className="far fa-circle nav-icon" />
+                        <p>Manage User</p>
+                    </NavLink>
+                    </li>
+                </ul>
+                </li>
+
                 <li className="nav-header">MISCELLANEOUS</li>
                 <li className="nav-item">
                 <a href="../../iframe.html" className="nav-link">

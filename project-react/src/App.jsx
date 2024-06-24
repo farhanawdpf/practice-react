@@ -1,6 +1,7 @@
 
 import Footer from './components/Footer';
 import Header from './components/Header';
+import UseState from './components/UseState';
 function App() {
   // const products = ['a','b','m','v'];
   const items = [ 
@@ -32,7 +33,9 @@ pro ={products}>
   items.map(itm =><Header 
   a = {itm}
  />)}
-   
+
+   <UseState/>
+
     </>
   )
 }
