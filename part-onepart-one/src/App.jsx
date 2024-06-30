@@ -13,17 +13,16 @@ import Adduser from './pages/users/Adduser';
 import Manageuser from './pages/users/Manageuser';
 import Edituser from './pages/users/Edituser';
 import AddCategory from './pages/category/AddCategory';
+import Register from './pages/Register';
+import Login from './pages/Login';
+import HomePortal from './portal/Pages/Home';
 
 
 const App = () => {
   return (
-<div className="wrapper">
-     <BrowserRouter>
-     <Navbar/>
-     <Sidebar/>
-     <div className='content-wrapper'> 
+     <BrowserRouter>     
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/home" element={<Home />} />
         <Route path="/contact" element={<Contact/>}/>
         <Route path="/add-user" element={<Adduser/>}/>
         <Route path="/add-category" element={<AddCategory/>}/>
@@ -32,12 +31,13 @@ const App = () => {
         <Route path="/blog" element={<Blog/>}>
            <Route path="second" element={<SecondPage/>}/>
         </Route>
+        <Route path="/register" element={<Register/>} />
+        <Route path="/login" element={<Login/>} />
+        <Route path="/" element={<HomePortal/>} />
       </Routes>
-      </div>
-     <Footer/>
     </BrowserRouter>
 
-   </div>
+  
   );
 };
 
