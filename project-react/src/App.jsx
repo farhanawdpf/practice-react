@@ -29,10 +29,10 @@ pro ={products}>
     />)
     
     } */}
-  {
+  {/* {
   items.map(itm =><Header 
   a = {itm}
- />)}
+ />)} */}
 
    <UseState/>
 
