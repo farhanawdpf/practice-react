@@ -2,6 +2,7 @@ import Sidebar from '../../components/Sidebar';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import React, {useState }from "react";
+import axios from "axios";
 import { useNavigate } from "react-router-dom";
 const Adduser = () => {
   const navigate= useNavigate();    
@@ -15,7 +16,7 @@ const Adduser = () => {
        e.preventDefault();
        console.log(formvalue);
        const formData= {name:formvalue.name, email:formvalue.email, phone:formvalue.phone}; 
-       const res= await axios.post("http://localhost/react-main/practice-react/main/api-php/user.php",formData);
+       const res= await axios.post("http://localhost/practice-react/main/api-php/user.php",formData);
        //let jsonres= res.data.json();        
          if(res.data.success)
          {
