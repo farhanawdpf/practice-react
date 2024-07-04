@@ -6,7 +6,7 @@ import axios from "axios";
 const Manageuser = () => {
   const [user, setUser] = useState([]);
   const loaderUser = async()=>{ 
-    const result= await axios.get("http://localhost/practice-react/main/api-php/view.php");
+    const result= await axios.get("http://localhost/react-main/practice-react/main/api-php/view.php");
     setUser(result.data.phpresult);
     console.log(result.data.phpresult);
   };
