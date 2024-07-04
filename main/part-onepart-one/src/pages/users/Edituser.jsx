@@ -3,7 +3,7 @@ import React from 'react';
 const Edituser = () => {
     return (
         <div>
-            edit
+          
         </div>
     );
 };

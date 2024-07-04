@@ -23,10 +23,10 @@ switch($method)
       $json_array= array();
       $userid= $path[4];
       
-      $getuserrow= mysqli_query($db_conn, "SELECT * FROM tbl_user WHERE userid='$userid' ");
+      $getuserrow= mysqli_query($db_conn, "SELECT * FROM users WHERE userid='$userid' ");
       while($userrow= mysqli_fetch_array($getuserrow))
       {
-       $json_array['rowUserdata']= array('id'=>$userrow['userid'],'name'=>$userrow['name'], 'email'=>$userrow['useremail'], 'status'=>$userrow['status'],);
+       $json_array['rowUserdata']= array('id'=>$userrow['userid'],'name'=>$userrow['name'], 'email'=>$userrow['useremail'], 'phone'=>$userrow['phone'],);
       }
       echo json_encode($json_array['rowUserdata']);
       return;

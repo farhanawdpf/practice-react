@@ -3,6 +3,7 @@ import Navbar from "../../components/Navbar";
 import Sidebar from "../../components/Sidebar";
 import Footer from "../../components/Footer";
 import axios from "axios";
+import { Link } from 'react-router-dom';
 const Manageuser = () => {
   const [user, setUser] = useState([]);
   const loaderUser = async()=>{ 
@@ -26,6 +27,9 @@ const Manageuser = () => {
             <div className="card">
               <div className="card-header">
                 <h3 className="card-title">Manage User</h3>
+              </div>
+              <div className="card-header">
+                <Link to="/add-user">Add User</Link>
               </div>
               {/* /.card-header */}
               <div className="card-body">
