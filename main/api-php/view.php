@@ -13,4 +13,7 @@ while($row = mysqli_fetch_assoc($mysqli))
     $json_data[]=$row;
 }
 echo json_encode(['phpresult'=>$json_data]);
+
+
+
 ?>
