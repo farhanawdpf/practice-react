@@ -77,7 +77,7 @@ switch($method)
            $email= $userUpdate->email;
            $phone= $userUpdate->phone;
 
-           $updateData= mysqli_query($db_conn, "UPDATE tbl_user SET name='$name', email='$email', status='$status' WHERE userid='$userid'  ");
+           $updateData= mysqli_query($db_conn, "UPDATE user SET name='$name', email='$email', phone='$phone' WHERE userid='$userid'  ");
            if($updateData)
            {
              echo json_encode(["success"=>"User Record Update Successfully"]);
@@ -92,7 +92,7 @@ switch($method)
           case "DELETE":
             $path= explode('/', $_SERVER["REQUEST_URI"]);
             //echo "message userid------".$path[4]; die;
-            $result= mysqli_query($db_conn, "DELETE FROM tbl_user WHERE userid= '$path[4]' ");
+            $result= mysqli_query($db_conn, "DELETE FROM users WHERE userid= '$path[4]' ");
             if($result)
             {
               echo json_encode(["success"=>"User Record Deleted Successfully"]);

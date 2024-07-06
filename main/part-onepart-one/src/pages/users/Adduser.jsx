@@ -36,7 +36,7 @@ const Adduser = () => {
   {/* general form elements */}
   <div className="card card-primary">
     <div className="card-header">
-      <h3 className="card-title">Quick Example</h3>
+      <h3 className="card-title">Add User</h3>
     </div>
     {/* /.card-header */}
     {/* form start */}
