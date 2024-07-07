@@ -91,24 +91,24 @@ const Sidebar = () => {
                 </ul>
                 </li>
                 <li className="nav-item">
-                <a href="#" className="nav-link">
+                <NavLink to="#" className="nav-link">
                     <i className="nav-icon fas fa-user" />
                     <p>
-                   Category
+                   product
                     <i className="fas fa-angle-left right" />
                     </p>
-                </a>
+                </NavLink>
                 <ul className="nav nav-treeview">
                     <li className="nav-item">
-                    <NavLink to="/add-category" className="nav-link">
+                    <NavLink to="/itemslist" className="nav-link">
                         <i className="far fa-circle nav-icon" />
-                        <p>Add-Category</p>
+                        <p>Product List</p>
                     </NavLink>
                     </li>
                     <li className="nav-item">
-                    <NavLink to="/manage-user" className="nav-link">
+                    <NavLink to="/items" className="nav-link">
                         <i className="far fa-circle nav-icon" />
-                        <p>Manage User</p>
+                        <p>Add Product</p>
                     </NavLink>
                     </li>
                 </ul>

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
 error_reporting(E_ALL);
 ini_set('display_errors',1);
@@ -27,3 +28,5 @@ if($result)
   echo json_encode(["Please Check the User Data!"]);
   return;
 }
+=======
+>>>>>>> 59460a427d2b2af317b25868f06a01ac393ba55f
