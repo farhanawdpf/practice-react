@@ -15,6 +15,9 @@ import AddCategory from './pages/category/AddCategory';
 import Register from './pages/Register';
 import Login from './pages/Login';
 import HomePortal from './portal/Pages/Home';
+import { AddProduct } from './pages/product/AddProduct';
+import { ListProduct } from './pages/product/ListProduct';
+import { EditProduct } from './pages/product/EditProduct';
 
 
 const App = () => {
@@ -27,8 +30,10 @@ const App = () => {
         <Route path="/add-category" element={<AddCategory/>}/>
         <Route path="/manage-user" element={<Manageuser/>}/>
         <Route path="/edit-user" element={<Edituser/>}/>
-      
         <Route path="/register" element={<Register/>} />
+        <Route path="/items" element={<AddProduct />} />
+        <Route path="/itemslist" element={<ListProduct />} />
+        <Route path="/itemedit/:id" element={<EditProduct />} />
         <Route path="/login" element={<Login/>} />
         <Route path="/" element={<HomePortal/>} />
       </Routes>

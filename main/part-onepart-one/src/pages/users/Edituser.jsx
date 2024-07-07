@@ -16,7 +16,7 @@ const Edituser = () => {
          e.preventDefault();
          console.log(formvalue);
          const formData= {name:formvalue.name, email:formvalue.email, phone:formvalue.phone}; 
-         const res= await axios.put("http://localhost/practice-react/main/api-php/user.php",formData);
+         const res= await axios.put("http://localhost/react-main/practice-react/main/api-php/user.php",formData);
          //let jsonres= res.data.json();        
            if(res.data.success)
            {

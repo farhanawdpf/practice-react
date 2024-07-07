@@ -17,7 +17,6 @@ const Manageuser = () => {
   const handleDelete= async(id)=>{
     const res= await axios.delete("http://localhost/react-main/practice-react/main/api-php/delete.php"+id);
     setMessage(res.data.success);
-    loaderUser();   
   }
  
   useEffect(()=>{ 
@@ -66,8 +65,8 @@ const Manageuser = () => {
                       <td>{user.phone}</td>
                       <td>
                         <Link to={"/edituser/"+user.id} className="btn btn-success mx-2">Edit</Link>
-                        {/* <button className="btn btn-danger" onClick={ ()=>handleDelete(user.id)}>Delete</button> */}
-                        <button className='btn btn-danger' onClick={() => { handleDelete(user.id) }}>Delete</button>
+                        <button className="btn btn-danger" onClick={ ()=>handleDelete(user.id)}>Delete</button>
+                        {/* <button className='btn btn-danger' onClick={() => { handleDelete(user.id) }}>Delete</button> */}
 
                       </td>
                     </tr>
