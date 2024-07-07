@@ -6,8 +6,6 @@ import 'bootstrap/dist/css/bootstrap.css';
 import {BrowserRouter,Routes,Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Contact from './pages/Contact';
-import SecondPage from './pages/SecondPage';
-import Sidebar from './components/Sidebar';
 import Adduser from './pages/users/Adduser';
 import Manageuser from './pages/users/Manageuser';
 import Edituser from './pages/users/Edituser';
@@ -15,6 +13,7 @@ import AddCategory from './pages/category/AddCategory';
 import Register from './pages/Register';
 import Login from './pages/Login';
 import HomePortal from './portal/Pages/Home';
+
 
 
 const App = () => {
@@ -26,7 +25,7 @@ const App = () => {
         <Route path="/add-user" element={<Adduser/>}/>
         <Route path="/add-category" element={<AddCategory/>}/>
         <Route path="/manage-user" element={<Manageuser/>}/>
-        <Route path="/edit-user" element={<Edituser/>}/>
+        <Route path="/edituser/:id" element={<Edituser/>}/>
       
         <Route path="/register" element={<Register/>} />
         <Route path="/login" element={<Login/>} />

@@ -1,32 +1,44 @@
 import Sidebar from '../../components/Sidebar';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
-import React, {useState }from "react";
+import React, {useState, useEffect }from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 const Edituser = () => {
-    const navigate= useNavigate();    
+   
+    const navigate= useNavigate();  
+    const {id}=   useParams();
     const [formvalue, setFormvalue]= useState({name:'', email:'', phone:''});
     const [message, setMessage]= useState('');
+
     const handleInput =(e)=>{
         setFormvalue({...formvalue, [e.target.name]:e.target.value});
     }
-  
+
+    useEffect( ()=>{
+        const userRowdata= async()=>{
+         const getUserdata= await fetch("http://localhost/practice-react/main/api-php/user.php/"+id);
+         const resuserdata= await getUserdata.json();        
+         setFormvalue(resuserdata);
+        }
+        userRowdata();
+    },[]);
+
     const handleSubmit =async(e)=>{
          e.preventDefault();
-         console.log(formvalue);
-         const formData= {name:formvalue.name, email:formvalue.email, phone:formvalue.phone}; 
+         //console.log(formvalue);
+         const formData= {id:id,name:formvalue.name, email:formvalue.email, phone:formvalue.phone}; 
          const res= await axios.put("http://localhost/practice-react/main/api-php/user.php",formData);
          //let jsonres= res.data.json();        
            if(res.data.success)
            {
             setMessage(res.data.success);
             setTimeout( ()=>{               
-                navigate('/manage-user');
+              navigate('/manage-user');
             }, 2000);
            
            }
-        }
+        }   
         return (
             <div className="wrapper">
             <Navbar/>
@@ -44,8 +56,8 @@ const Edituser = () => {
           <form onSubmit={handleSubmit}>
             <div className="card-body">
               <div className="form-group">
-                <label htmlFor="exampleInputEmail1">Name</label>
-                <input type="text" className="form-control" id="exampleInputEmail1" placeholder="Enter name" name="name" value={formvalue.name}  onChange={ handleInput} />
+                <label>Name</label>
+                <input type="text" className="form-control"  placeholder="Enter name" name="name" value={formvalue.name}  onChange={ handleInput} />
               </div>
               <div className="form-group">
                 <label htmlFor="exampleInputPassword1">email</label>
@@ -58,7 +70,7 @@ const Edituser = () => {
             </div>
             {/* /.card-body */}
             <div className="card-footer">
-            <button name="submit" className="btn btn-success">Submit</button>
+            <button name="submit" className="btn btn-success">Update</button>
             </div>
           </form>
         </div>

@@ -26,7 +26,7 @@ switch($method)
       $getuserrow= mysqli_query($db_conn, "SELECT * FROM users WHERE userid='$userid' ");
       while($userrow= mysqli_fetch_array($getuserrow))
       {
-       $json_array['rowUserdata']= array('id'=>$userrow['userid'],'name'=>$userrow['name'], 'email'=>$userrow['useremail'], 'phone'=>$userrow['phone'],);
+       $json_array['rowUserdata']= array('id'=>$userrow['userid'],'name'=>$userrow['name'], 'email'=>$userrow['email'], 'phone'=>$userrow['phone'],);
       }
       echo json_encode($json_array['rowUserdata']);
       return;
@@ -77,7 +77,8 @@ switch($method)
            $email= $userUpdate->email;
            $phone= $userUpdate->phone;
 
-           $updateData= mysqli_query($db_conn, "UPDATE user SET name='$name', email='$email', phone='$phone' WHERE userid='$userid'  ");
+           $updateData= mysqli_query($db_conn, "UPDATE users SET name='$name', email='$email', phone='$phone' WHERE id='$userid'  ");
+           
            if($updateData)
            {
              echo json_encode(["success"=>"User Record Update Successfully"]);

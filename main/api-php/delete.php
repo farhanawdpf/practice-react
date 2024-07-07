@@ -10,7 +10,7 @@ if($db_conn===false)
 {
   die("ERROR: Could Not Connect".mysqli_connect_error());
 }
-
+$path= explode('/', $_SERVER['REQUEST_URI']);
 $id = $_GET['id'];
 
 // $data = $db_conn->query('delete from users where id=' . $id);
