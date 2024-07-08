@@ -9,7 +9,7 @@ export const ListProduct = () => {
     const [items, setItems] = useState([]);
 
     const itemDelete = (id) => {
-        axios.post("http://localhost/practice-react/main/api-php/product/getItems.php?id=/" + id)
+        axios.post("http://localhost/practice-react/main/api-php/product/deleteItem.php?id=" + id)
             .then((res) => (console.log(res)))
 
         axios.get("http://localhost/practice-react/main/api-php/product/getItems.php")
@@ -55,20 +55,20 @@ export const ListProduct = () => {
                             {items.map((data, i) => {
                                 return (
                               
-                                        <tr key={i}>
-                                            <th scope="row">{++i}</th>
-                                            <td>{data.name}</td>
-                                            <td>{data.details}</td>
-                                            <td>
-                                                <img className='w-50' src={`http://localhost/practice-react/main/api-php/product/images/${data.photo}`} />
-                                            </td>
-                                            <td>
-                                                <NavLink to={`/itemedit/${data.id}`}>
-                                                    <button className='btn btn-info mb-2 mt-2'>Update</button>
-                                                </NavLink>
-                                                <button className='btn btn-danger' onClick={() => { itemDelete(data.id) }}>Delete</button>
-                                            </td>
-                                        </tr>
+                                <tr key={i}>
+                                    <th scope="row">{++i}</th>
+                                    <td>{data.name}</td>
+                                    <td>{data.details}</td>
+                                    <td>
+                                        <img className='w-50' src={`http://localhost/practice-react/main/api-php/product/images/${data.photo}`} />
+                                    </td>
+                                    <td>
+                                        <NavLink to={`/itemedit/${data.id}`}>
+                                            <button className='btn btn-info mb-2 mt-2'>Update</button>
+                                        </NavLink>
+                                        <button className='btn btn-danger' onClick={() => { itemDelete(data.id) }}>Delete</button>
+                                    </td>
+                                </tr>
                                
                                 )
                             })}

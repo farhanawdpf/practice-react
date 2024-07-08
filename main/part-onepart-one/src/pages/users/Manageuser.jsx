@@ -3,7 +3,7 @@ import Navbar from "../../components/Navbar";
 import Sidebar from "../../components/Sidebar";
 import Footer from "../../components/Footer";
 import axios from "axios";
-import { Link } from 'react-router-dom';
+import { Link,NavLink } from 'react-router-dom';
 const Manageuser = () => {
   const [user, setUser] = useState([]);
   const [message, setMessage]= useState('');
@@ -15,7 +15,7 @@ const Manageuser = () => {
   };
 
   const handleDelete= async(id)=>{
-    const res= await axios.delete("http://localhost/practice-react/main/api-php/delete.php/"+id);
+    const res= await axios.delete("http://localhost/practice-react/main/api-php/delete.php?id="+ id);
     setMessage(res.data.success);
   }
   useEffect(()=>{ 
@@ -63,10 +63,13 @@ const Manageuser = () => {
                       <td>{user.email}</td>
                       <td>{user.phone}</td>
                       <td>
-                        <Link to={"/edituser/"+user.id} className="btn btn-success mx-2">Edit</Link>
-                        <button className="btn btn-danger" onClick={ ()=>handleDelete(user.id)}>Delete</button>
-                        {/* <button className='btn btn-danger' onClick={() => { handleDelete(user.id) }}>Delete</button> */}
-
+                        {/* <Link to={"/edit-user/"+user.id} className="btn btn-success mx-2">Edit</Link> */}
+                        <NavLink to={`/edit-user/${user.id}`}>
+                                            <button className='btn btn-info mb-2 mt-2'>Update</button>
+                                        </NavLink>
+                        {/* <button className="btn btn-danger" onClick={ ()=>handleDelete(user.id)}>Delete</button> */}
+                        <button className='btn btn-danger' onClick={() => { handleDelete(user.id) }}>Delete</button>
+                       
                       </td>
                     </tr>
 					        ))}

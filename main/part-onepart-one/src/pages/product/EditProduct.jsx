@@ -1,7 +1,8 @@
 import Sidebar from '../../components/Sidebar';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
-import React, {useState }from "react";
+import { useParams } from 'react-router-dom';
+import React, {useState, useEffect }from "react";
 import axios from "axios";
 import { useNavigate, NavLink } from "react-router-dom";
 export const EditProduct = () => {
@@ -12,7 +13,7 @@ export const EditProduct = () => {
   const navi = useNavigate()
 
   useEffect(() => {
-      axios.get("http://localhost/react-main/practice-react/main/api-php/product/getItem.php?id=" + id)
+      axios.put("http://localhost/practice-react/main/api-php/product/edititems.php?id=" + id)
           .then((res) => {
               setName(res.data.name)
               console.log(res.data);
@@ -27,7 +28,7 @@ export const EditProduct = () => {
       formdata.append('details', details)
       formdata.append('photo', photo)
       formdata.append('id', id)
-      axios.post("http://localhost/react-main/practice-react/main/api-php/product/edititems.php", formdata, {
+      axios.put("http://localhost/practice-react/main/api-php/product/edititems.php", formdata, {
           headers: {
               "Content-Type": "multipart/form-data"
           }
@@ -88,7 +89,7 @@ export const EditProduct = () => {
                             </div>
 
                             <div className='col-md-6'>
-                                <img className='h-50 w-50 mt-4' src={`http://localhost/react-main/practice-react/main/api-php/product/images/${photo}`} />
+                                <img className='h-50 w-50 mt-4' src={`http://localhost/practice-react/main/api-php/product/images/${photo}`} />
                                 <input className="form-control form-control-lg mt-4" id="formFileLg" type="file" onChange={(e) => setPhoto(e.target.files[0])} />
                             </div>
 

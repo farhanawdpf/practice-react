@@ -17,7 +17,7 @@ const Edituser = () => {
 
     useEffect( ()=>{
         const userRowdata= async()=>{
-         const getUserdata= await fetch("http://localhost/practice-react/main/api-php/user.php/"+id);
+         const getUserdata= await fetch("http://localhost/practice-react/main/api-php/user.php?id=" + id);
          const resuserdata= await getUserdata.json();        
          setFormvalue(resuserdata);
         }
