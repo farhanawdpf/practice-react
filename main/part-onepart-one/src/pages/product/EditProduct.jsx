@@ -6,42 +6,42 @@ import React, {useState, useEffect }from "react";
 import axios from "axios";
 import { useNavigate, NavLink } from "react-router-dom";
 export const EditProduct = () => {
-  const { id } = useParams()
-  const [name, setName] = useState('')
-  const [details, setDetails] = useState('')
-  const [photo, setPhoto] = useState('')
-  const navi = useNavigate()
+    const { id } = useParams()
+    const [name, setName] = useState('')
+    const [details, setDetails] = useState('')
+    const [photo, setPhoto] = useState('')
+    const navi = useNavigate()
 
-  useEffect(() => {
-      axios.put("http://localhost/practice-react/main/api-php/product/edititems.php?id=" + id)
-          .then((res) => {
-              setName(res.data.name)
-              console.log(res.data);
-              setDetails(res.data.details)
-              setPhoto(res.data.photo)
-          })
-  }, [])
+    useEffect(() => {
+        axios.get("http://localhost/practice-react/main/api-php/product/getItem.php?id=" + id)
+            .then((res) => {
+                setName(res.data.name)
+                console.log(res.data);
+                setDetails(res.data.details)
+                setPhoto(res.data.photo)
+            })
+    }, [])
 
-  const save = () => {
-      const formdata = new FormData()
-      formdata.append('name', name)
-      formdata.append('details', details)
-      formdata.append('photo', photo)
-      formdata.append('id', id)
-      axios.put("http://localhost/practice-react/main/api-php/product/edititems.php", formdata, {
-          headers: {
-              "Content-Type": "multipart/form-data"
-          }
-      })
-          .then((res) => {
-              console.log(res.data)
-              setName('')
-              setPhoto('')
-              setDetails('')
-              setPhoto(null)
-              navi('/itemslist')
-          })
-        }
+    const save = () => {
+        const formdata = new FormData()
+        formdata.append('name', name)
+        formdata.append('details', details)
+        formdata.append('photo', photo)
+        formdata.append('id', id)
+        axios.post("http://localhost/practice-react/main/api-php/product/editItems.php", formdata, {
+            headers: {
+                "Content-Type": "multipart/form-data"
+            }
+        })
+            .then((res) => {
+                console.log(res.data)
+                setName('')
+                setPhoto('')
+                setDetails('')
+                setPhoto(null)
+                navi('/itemslist')
+            })
+    }
   return (
     <div className="wrapper">
     <Navbar/>
@@ -78,14 +78,15 @@ export const EditProduct = () => {
                                 <label htmlFor="floatingInput">Name</label>
                             </div>
 
-                            <div className="form-floating">
-                                <textarea
+                            <div className="form-floating mb-3">
+                                <input
+                                    type="text"
                                     className="form-control"
-                                    style={{ height: 150 }}
                                     onChange={(e) => setDetails(e.target.value)}
                                     value={details}
+
                                 />
-                                <label htmlFor="floatingTextarea">Details</label>
+                                <label htmlFor="floatingInput">Details</label>
                             </div>
 
                             <div className='col-md-6'>
