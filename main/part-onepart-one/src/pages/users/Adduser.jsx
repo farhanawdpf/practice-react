@@ -16,7 +16,7 @@ const Adduser = () => {
        e.preventDefault();
        console.log(formvalue);
        const formData= {name:formvalue.name, email:formvalue.email, phone:formvalue.phone}; 
-       const res= await axios.post("http://localhost/practice-react/main/api-php/insert.php",formData);
+       const res= await axios.post("http://localhost/react/practice-react/main/api-php/insert.php",formData);
        //let jsonres= res.data.json();        
          if(res.data.success)
          {

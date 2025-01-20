@@ -9,13 +9,13 @@ const Manageuser = () => {
   const [message, setMessage]= useState('');
 
   const loaderUser = async()=>{ 
-    const result= await axios.get("http://localhost/practice-react/main/api-php/view.php");
+    const result= await axios.get("http://localhost/react/practice-react/main/api-php/view.php");
     setUser(result.data.phpresult);
     console.log(result.data.phpresult);
   };
 
   const handleDelete= async(id)=>{
-    const res= await axios.delete("http://localhost/practice-react/main/api-php/delete.php?id="+ id);
+    const res= await axios.delete("http://localhost/react/practice-react/main/api-php/delete.php?id="+ id);
     setMessage(res.data.success);
   }
   useEffect(()=>{ 
@@ -72,7 +72,7 @@ const Manageuser = () => {
                        
                       </td>
                     </tr>
-					        ))}
+  ))}
                   </tbody>
                 </table>
               </div>
