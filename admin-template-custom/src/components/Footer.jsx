@@ -1,10 +1,14 @@
 import React from "react";
 
-const Footer = () => {
+const Footer = (props) => {
+    console.log(props);
   return (
     <div>
       <div>
         <footer className="main-footer">
+            <div> 
+                <h1>{props.p}</h1>
+            </div>
           <div className="float-right d-none d-sm-block">
             <b>Version</b> 3.2.0
           </div>

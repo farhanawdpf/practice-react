@@ -81,16 +81,16 @@ const Sidebar = () => {
           </a>
           <ul className="nav nav-treeview">
             <li className="nav-item">
-              <a href="../examples/invoice.html" className="nav-link">
+              <NavLink to="/use_state" className="nav-link">
                 <i className="far fa-circle nav-icon" />
-                <p>Invoice</p>
-              </a>
+                <p>UseState</p>
+              </NavLink>
             </li>
             <li className="nav-item">
-              <a href="../examples/profile.html" className="nav-link">
+              <NavLink to="/destruct" className="nav-link">
                 <i className="far fa-circle nav-icon" />
-                <p>Profile</p>
-              </a>
+                <p>Destruct</p>
+              </NavLink>
             </li>
             <li className="nav-item">
               <a href="../examples/e-commerce.html" className="nav-link">

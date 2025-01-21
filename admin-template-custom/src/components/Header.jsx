@@ -1,9 +1,10 @@
 import React from 'react';
 
-const Header = () => {
+const Header = (props) => {
     return (
         <div>
        <div className="wrapper">
+      
   {/* Navbar */}
   <nav className="main-header navbar navbar-expand navbar-white navbar-light">
     {/* Left navbar links */}
@@ -18,6 +19,9 @@ const Header = () => {
         <a href="#" className="nav-link">Contact</a>
       </li>
     </ul>
+    <div> 
+            <h1>{props.demo}</h1>
+        </div>
     {/* Right navbar links */}
     <ul className="navbar-nav ml-auto">
       {/* Navbar Search */}
