@@ -9,15 +9,15 @@ export const ListProduct = () => {
     const [items, setItems] = useState([]);
 
     const itemDelete = (id) => {
-        axios.post("http://localhost/practice-react/main/api-php/product/deleteItem.php?id=" + id)
+        axios.post("http://localhost/react/practice-react/main/api-php/product/deleteItem.php?id=" + id)
             .then((res) => (console.log(res)))
 
-        axios.get("http://localhost/practice-react/main/api-php/product/getItems.php")
+        axios.get("http://localhost/react/practice-react/main/api-php/product/getItems.php")
             .then((res) => setItems(res.data))
     }
 
     useEffect(() => {
-        axios.get("http://localhost/practice-react/main/api-php/product/getItems.php")
+        axios.get("http://localhost/react/practice-react/main/api-php/product/getItems.php")
             .then((res) => setItems(res.data))
     }, [])
   return (
@@ -35,7 +35,7 @@ export const ListProduct = () => {
                 <h3 className="card-title">Manage User</h3>
               </div>
               <div className="card-header">
-                <Link to="/add-user">Add User</Link>
+                <Link to="/items">Add Product</Link>
               </div>
               {/* /.card-header */}
               <div className="card-body">
@@ -60,7 +60,7 @@ export const ListProduct = () => {
                                     <td>{data.name}</td>
                                     <td>{data.details}</td>
                                     <td>
-                                        <img className='w-50' src={`http://localhost/practice-react/main/api-php/product/images/${data.photo}`} />
+                                        <img className='w-50' src={`http://localhost/react/practice-react/main/api-php/product/images/${data.photo}`} />
                                     </td>
                                     <td>
                                         <NavLink to={`/itemedit/${data.id}`}>

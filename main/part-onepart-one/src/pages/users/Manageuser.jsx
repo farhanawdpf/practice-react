@@ -10,8 +10,8 @@ const Manageuser = () => {
 
   const loaderUser = async()=>{ 
     const result= await axios.get("http://localhost/react/practice-react/main/api-php/view.php");
-    setUser(result.data.phpresult);
-    console.log(result.data.phpresult);
+    setUser(result.data);
+    console.log(result.data);
   };
 
   const handleDelete= async(id)=>{
@@ -56,12 +56,13 @@ const Manageuser = () => {
                     </tr>
                   </thead>
                   <tbody>
-                  {user.map((user, index) => (
-                    <tr key={index}>
-                      <td>{index+1}</td>
-                      <td>{user.name}</td>
-                      <td>{user.email}</td>
-                      <td>{user.phone}</td>
+                  {user.map((us, ind) => (
+                    <tr key={ind}>
+                      <td>{ind+1}</td>
+                      <td>{us.id}</td>
+                      <td>{us.name}</td>
+                      <td>{us.email}</td>
+                      <td>{us.phone}</td>
                       <td>
                         {/* <Link to={"/edit-user/"+user.id} className="btn btn-success mx-2">Edit</Link> */}
                         <NavLink to={`/edit-user/${user.id}`}>

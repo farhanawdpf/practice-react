@@ -15,7 +15,7 @@ export const AddProduct = () => {
         formdata.append('name', name)
         formdata.append('details', details)
         formdata.append('photo', photo)
-        axios.post("http://localhost/practice-react/main/api-php/product/additems.php", formdata, {
+        axios.post("http://localhost/react/practice-react/main/api-php/product/additems.php", formdata, {
             headers: {
                 "Content-Type": "multipart/form-data"
             }
