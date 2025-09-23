@@ -1,10 +1,11 @@
-import React from "react";
-import Navbar from "../../components/Navbar";
-import Sidebar from "../../components/Sidebar";
-import Footer from "../../components/Footer";
-const ManageUser = () => {
-  return (
-    <div>
+import React from 'react';
+import Navbar from '../../components/Navbar';
+import Sidebar from '../../components/Sidebar';
+import Footer from '../../components/Footer';
+const ManageCategory = () => {
+    return (
+        <div>
+        <div>
       {/* <!-- Site wrapper --> */}
       <div className="wrapper">
         {/* Navbar */}
@@ -23,7 +24,7 @@ const ManageUser = () => {
                     <li className="breadcrumb-item">
                       <a href="#">Home</a>
                     </li>
-                    <li className="breadcrumb-item active">Blank Page</li>
+                    <li className="breadcrumb-item active">Manage Category</li>
                   </ol>
                 </div>
               </div>
@@ -39,7 +40,7 @@ const ManageUser = () => {
                   <div className="col-12">
                     <div className="card">
                       <div className="card-header">
-                        <h3 className="card-title">Manage Users</h3>
+                        <h3 className="card-title">Manage Category</h3>
                         <div className="card-tools">
                           <div
                             className="input-group input-group-sm"
@@ -65,8 +66,8 @@ const ManageUser = () => {
                           <thead>
                             <tr>
                               <th>ID</th>
-                              <th>User</th>
-                              <th>Date</th>
+                              <th>Category Name</th>
+                              <th>note</th>
                               <th>Status</th>
                             </tr>
                           </thead>
@@ -76,9 +77,9 @@ const ManageUser = () => {
                               <td>John Doe</td>
                               <td>11-7-2014</td>
                               <td>
-                                <span className="tag tag-success">
-                                  Approved
-                                </span>
+                               <button>Insart</button>
+                               <button>update</button>
+                               <button>delete</button>
                               </td>
                               
                             </tr>
@@ -86,8 +87,10 @@ const ManageUser = () => {
                               <td>219</td>
                               <td>Alexander Pierce</td>
                               <td>11-7-2014</td>
-                              <td>
-                                <span className="tag tag-warning">Pending</span>
+                               <td>
+                               <button>Insart</button>
+                               <button>update</button>
+                               <button>delete</button>
                               </td>
                              
                             </tr>
@@ -97,8 +100,9 @@ const ManageUser = () => {
                               <td>11-7-2014</td>
                               
                               <td>
-                                Bacon ipsum dolor sit amet salami venison
-                                chicken flank fatback doner.
+                               <button>Insart</button>
+                               <button>update</button>
+                               <button>delete</button>
                               </td>
                             </tr>
                             <tr>
@@ -106,7 +110,9 @@ const ManageUser = () => {
                               <td>Mike Doe</td>
                               <td>11-7-2014</td>
                               <td>
-                                <span className="tag tag-danger">Denied</span>
+                               <button>Insart</button>
+                               <button>update</button>
+                               <button>delete</button>
                               </td>
                               
                             </tr>
@@ -131,7 +137,8 @@ const ManageUser = () => {
       </div>
       {/* ./wrapper */}
     </div>
-  );
+        </div>
+    );
 };
 
-export default ManageUser;
+export default ManageCategory;

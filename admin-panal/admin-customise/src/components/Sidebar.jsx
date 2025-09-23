@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 const Sidebar = () => {
     return (
         <div>
@@ -113,6 +113,30 @@ const Sidebar = () => {
                       <Link to="/manage-user" className="nav-link">
                         <i className="far fa-circle nav-icon" />
                         <p>Manage User</p>
+                      </Link>
+                    </li>
+                  
+                  </ul>
+                </li>
+                 <li className="nav-item">
+                  <a href="#" className="nav-link">
+                    <i className="nav-icon fas fa-book" />
+                    <p>
+                      Category
+                      <i className="fas fa-angle-left right" />
+                    </p>
+                  </a>
+                  <ul className="nav nav-treeview">
+                    <li className="nav-item">
+                      <Link to="/add-cat" className="nav-link">
+                        <i className="far fa-circle nav-icon" />
+                        <p>Add Category</p>
+                      </Link>
+                    </li>
+                    <li className="nav-item">
+                      <Link to="/manage-cat" className="nav-link">
+                        <i className="far fa-circle nav-icon" />
+                        <p>Manage Category</p>
                       </Link>
                     </li>
                   
